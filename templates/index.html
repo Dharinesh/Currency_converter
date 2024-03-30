@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form method="post">
+        <label for="base_currency">Base Currency:</label>
+        <select name="base_currency" id="base_currency">
+            {% for currency in currencies %}
+            {% if currency in currency_info %}
+            <option value="{{ currency }}">{{ currency }} ({{ currency_info[currency][0] }}) <img src="{{ url_for('static', filename='flags/' + currency_info[currency][1]) }}" alt="{{ currency_info[currency][0] }} Flag"></option>
+            {% else %}
+            <option value="{{ currency }}">{{ currency }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <br>
+        <label for="target_currency">Target Currency:</label>
+        <select name="target_currency" id="target_currency">
+            {% for currency in currencies %}
+            {% if currency in currency_info %}
+            <option value="{{ currency }}">{{ currency }} ({{ currency_info[currency][0] }}) <img src="{{ url_for('static', filename='flags/' + currency_info[currency][1]) }}" alt="{{ currency_info[currency][0] }} Flag"></option>
+            {% else %}
+            <option value="{{ currency }}">{{ currency }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <br>
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" step="0.01" required>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+    {% if result %}
+    <div class="result-box">
+        <p class="result">{{ result }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
