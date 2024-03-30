@@ -21,7 +21,7 @@ Currency Converter is a web application built with Flask that allows users to co
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/currency-converter.git
+    git clone https://github.com/your-username/Currency-converter.git
     ```
 
 2. Navigate to the project directory:
