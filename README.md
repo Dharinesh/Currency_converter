@@ -9,6 +9,11 @@ Currency Converter is a web application built with Flask that allows users to co
 - User-friendly interface with dark mode support.
 - Responsive design suitable for desktop and mobile devices.
 
+## WebPage
+
+-Minimal design
+![image](https://github.com/Dharinesh/Currency_converter/assets/108059896/2a8b2c58-5dc7-4ddb-8a35-3e05ccb44ee7)
+
 ## Getting Started
 
 ### Prerequisites
