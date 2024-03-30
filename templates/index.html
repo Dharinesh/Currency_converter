@@ -10,22 +10,14 @@
         <label for="base_currency">Base Currency:</label>
         <select name="base_currency" id="base_currency">
             {% for currency in currencies %}
-            {% if currency in currency_info %}
-            <option value="{{ currency }}">{{ currency }} ({{ currency_info[currency][0] }}) <img src="{{ url_for('static', filename='flags/' + currency_info[currency][1]) }}" alt="{{ currency_info[currency][0] }} Flag"></option>
-            {% else %}
             <option value="{{ currency }}">{{ currency }}</option>
-            {% endif %}
             {% endfor %}
         </select>
         <br>
         <label for="target_currency">Target Currency:</label>
         <select name="target_currency" id="target_currency">
             {% for currency in currencies %}
-            {% if currency in currency_info %}
-            <option value="{{ currency }}">{{ currency }} ({{ currency_info[currency][0] }}) <img src="{{ url_for('static', filename='flags/' + currency_info[currency][1]) }}" alt="{{ currency_info[currency][0] }} Flag"></option>
-            {% else %}
             <option value="{{ currency }}">{{ currency }}</option>
-            {% endif %}
             {% endfor %}
         </select>
         <br>
